@@ -18,6 +18,18 @@
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
                 document.getElementById('main-content').style.display = 'block';
+
+                // Highlight the active page link
+                const currentPage = window.location.pathname.split('/').pop();
+                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPage) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
             });
     </script>
 
