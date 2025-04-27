@@ -41,3 +41,8 @@ footer {
     height: 90vh; /* Adjust height as needed */
     border: none;
 }
+.card {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    border: none; /* Remove border */
+}

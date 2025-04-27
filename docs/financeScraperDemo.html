@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title -->
+    <title>Finance Scraper</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <!-- Top navbar -->
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('templates/navBar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                document.getElementById('main-content').style.display = 'block';
+
+                // Highlight the active page link
+                const currentPage = window.location.pathname.split('/').pop();
+                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPage) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            });
+    </script>
+
+    <!-- Main content -->
+    <div id="main-content">
+        <div class="container">
+            <!-- Elevated Card Container -->
+            <div class="card shadow-lg p-4 mt-5">
+                <!-- Title and Description -->
+                <h2 class="text-center">Finance Scraper</h2>
+                <p class="text-muted text-center">
+                    App written in Kotlin and python to scrape financial data from pdf documents and visualise through graphs and databases.
+                </p>
+
+                <!-- Two Columns Below Carousel -->
+                <div class="row mt-4">
+                    <!-- Column 1 -->
+                    <div class="col-md-4">
+                        <h4 class="text-center">Features</h4>
+                        <ul class="text-muted">
+                            <li>Scrape date, amount, balance and description from transaction data</li>
+                            <li>Visualise transaction history with time-dependent controls</li>
+                        </ul>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="col-md-4">
+                        <h4 class="text-center">Supported sources</h4>
+                        <ul class="text-muted">
+                            <li>Santander (debit)</li>
+                            <li>Chase (debit, saver, round-up)</li>
+                            <li>AJ Bell (LISA)</li>
+                            <li>Trading212</li>
+                            <li>eToro</li>
+                        </ul>
+                    </div>
+                    <!-- Column 3 -->
+                    <div class="col-md-4">
+                        <h4 class="text-center">Technologies Used</h4>
+                        <ul class="text-muted">
+                            <li>Kotlin for app development</li>
+                            <li>Python for data processing and scraping</li>
+                            <li>SQLite for database storage</li>
+                            <li>Vico for data visualization</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- Video Carousel -->
+                <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="20000">
+                    <div class="carousel-inner">
+                        <!-- Video 1 -->
+                        <div class="carousel-item active">
+                            <div class="ratio ratio-16x9">
+                                <video class="d-block w-100" autoplay muted loop>
+                                    <source src="static/videos/fs1.mkv" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <!-- Video 2 -->
+                        <div class="carousel-item">
+                            <div class="ratio ratio-16x9">
+                                <video class="d-block w-100" autoplay muted loop>
+                                    <source src="static/videos/fs2.mkv" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <!-- Video 3 -->
+                        <div class="carousel-item">
+                            <div class="ratio ratio-16x9">
+                                <video class="d-block w-100" autoplay muted loop>
+                                    <source src="static/videos/fs3.mkv" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <!-- Video 4 -->
+                        <div class="carousel-item">
+                            <div class="ratio ratio-16x9">
+                                <video class="d-block w-100" autoplay muted loop>
+                                    <source src="static/videos/fs4.mkv" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<!-- Footer -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('templates/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
+</html>
