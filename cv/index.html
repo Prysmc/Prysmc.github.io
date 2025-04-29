@@ -3,13 +3,13 @@
 <head>
     <!-- Title -->
     <title>CV</title>
-    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
     <!-- Top navbar -->
     <div id="navbar-placeholder"></div>
     <script>
-        fetch('templates/navBar.html')
+        fetch('/templates/navBar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
@@ -34,7 +34,7 @@
         <div class="container">
             <h1 class="text-center">Laurence Martin - CV</h1>
             <h6 class="text-center">Dated - Apr 24</h1>
-            <iframe class="pdf-container" src="static/cv.pdf"></iframe>
+            <iframe class="pdf-container" src="/static/cv.pdf"></iframe>
         </div>
     </div>
     
@@ -44,7 +44,7 @@
 <!-- Footer -->
 <div id="footer-placeholder"></div>
 <script>
-    fetch('templates/footer.html')
+    fetch('/templates/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;

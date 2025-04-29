@@ -3,13 +3,13 @@
 <head>
     <!-- Title -->
     <title>Finance Scraper</title>
-    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
     <!-- Top navbar -->
     <div id="navbar-placeholder"></div>
     <script>
-        fetch('templates/navBar.html')
+        fetch('/templates/navBar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
@@ -80,7 +80,7 @@
                         <div class="carousel-item active">
                             <div class="ratio ratio-16x9">
                                 <video class="d-block w-100" autoplay muted loop>
-                                    <source src="static/videos/fs1.mkv" type="video/mp4">
+                                    <source src="/static/videos/fs1.mkv" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
@@ -89,7 +89,7 @@
                         <div class="carousel-item">
                             <div class="ratio ratio-16x9">
                                 <video class="d-block w-100" autoplay muted loop>
-                                    <source src="static/videos/fs2.mkv" type="video/mp4">
+                                    <source src="/static/videos/fs2.mkv" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
@@ -98,7 +98,7 @@
                         <div class="carousel-item">
                             <div class="ratio ratio-16x9">
                                 <video class="d-block w-100" autoplay muted loop>
-                                    <source src="static/videos/fs3.mkv" type="video/mp4">
+                                    <source src="/static/videos/fs3.mkv" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
@@ -107,7 +107,7 @@
                         <div class="carousel-item">
                             <div class="ratio ratio-16x9">
                                 <video class="d-block w-100" autoplay muted loop>
-                                    <source src="static/videos/fs4.mkv" type="video/mp4">
+                                    <source src="/static/videos/fs4.mkv" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
@@ -133,7 +133,7 @@
 <!-- Footer -->
 <div id="footer-placeholder"></div>
 <script>
-    fetch('templates/footer.html')
+    fetch('/templates/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
