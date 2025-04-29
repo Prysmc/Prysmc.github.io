@@ -32,11 +32,15 @@
     <div id="main-content">
         <div class="container">
             <!-- Elevated Card Container -->
-            <div class="card shadow-lg p-4 mt-5">
+            <div class="card shadow-lg p-4">
                 <!-- Title and Description -->
                 <h2 class="text-center">Finance Scraper</h2>
                 <p class="text-muted text-center">
                     App written in Kotlin and python to scrape financial data from pdf documents and visualise through graphs and databases.
+                    Using <a href="https://github.com/chaquo/chaquopy" target="_blank">chaquo</a> library for running python within the Kotlin
+                    framework (better versitility for PDF parsing & data manipulation), <a href="https://sqlite.org/" target="_blank">SQLite</a>
+                    file for CRUD operations on the data (better control and processing speed than ROOM) and 
+                    <a href="https://github.com/patrykandpatrick/vico" target="_blank">vico</a> for charting of data.
                 </p>
 
                 <!-- Two Columns Below Carousel -->
@@ -122,6 +126,11 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
+
+                <!-- Github link-->
+                <p class="text-muted text-center mt-3">
+                    <a href="https://github.com/Prysmc/FinanceScraper" target="_blank">Github link (request access)</a>
+                </p>
             </div>
         </div>
     </div>
