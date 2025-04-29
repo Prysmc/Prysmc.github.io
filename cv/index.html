@@ -16,11 +16,10 @@
                 document.getElementById('main-content').style.display = 'block';
 
                 // Highlight the active page link
-                const currentPage = window.location.pathname.split('/').pop();
                 const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
                 navLinks.forEach(link => {
-                    if (link.getAttribute('href') === currentPage) {
+                    if (link.getAttribute('href') === window.location.pathname) {
                         link.classList.add('active');
                     } else {
                         link.classList.remove('active');
