@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .music-player {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .music-player button {
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.1);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .music-player button:hover {
+            background-color: #5a6268;
+        }
+
+        .music-player audio {
+            height: 50px;
+            flex-grow: 1; 
+            max-width: 300px;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="music-player">
+        <!-- Left Arrow -->
+        <button id="prev-song" class="btn btn-secondary">
+            &#9664;
+        </button>
+
+        <!-- Audio Control -->
+        <audio id="audio-player" controls controlsList="nodownload noplaybackrate">
+            <source id="audio-source" src="/static/audio/song1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Right Arrow -->
+        <button id="next-song" class="btn btn-secondary">
+            &#9654;
+        </button>
+    </div>
+
+    <script>
+        const songs = [
+            '/static/audio/song1.mp3',
+            '/static/audio/song2.mp3'
+        ];
+
+        let currentSongIndex = 0;
+        const audioPlayer = document.getElementById('audio-player');
+        const audioSource = document.getElementById('audio-source');
+
+        function loadSong(index) {
+            audioSource.src = songs[index];
+            audioPlayer.load();
+        }
+
+        document.getElementById('prev-song').addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            loadSong(currentSongIndex);
+            audioPlayer.play();
+        });
+
+        document.getElementById('next-song').addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadSong(currentSongIndex);
+            audioPlayer.play();
+        });
+
+        loadSong(currentSongIndex);
+    </script>
+</body>
+</html>
