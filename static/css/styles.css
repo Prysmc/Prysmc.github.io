@@ -1,3 +1,4 @@
+/* Navbar active link */
 .navbar-nav .nav-link.active {
     background-color: #6fb5ff;
     color: white !important;
@@ -15,22 +16,19 @@
     border-radius: 5px;
     padding: 5px 10px;
 }
+
+/* Main content and layout */
 #main-content {
     display: none;
+    flex: 1; /* Pushes the footer to the bottom */
 }
 html, body {
     height: 100%;
 }
-
 body {
     display: flex;
     flex-direction: column;
 }
-
-#main-content {
-    flex: 1; /* Pushes the footer to the bottom */
-}
-
 footer {
     width: 100%;
     position: relative;
@@ -45,4 +43,76 @@ footer {
     background-color: #ffffff; /* White background */
     border-radius: 10px; /* Rounded corners */
     border: none; /* Remove border */
+}
+
+.carousel-btn-in-grey {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 2.5rem;
+    background: #444a57;
+    border-radius: 0.5rem;           /* Rectangle with slightly rounded corners */
+    border: 2px solid #fff;          /* White border */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    opacity: 0.85;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.carousel-control-prev.carousel-btn-in-grey {
+    left: 0.5rem;
+}
+.carousel-control-next.carousel-btn-in-grey {
+    right: 0.5rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1) grayscale(1) brightness(0.7);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.carousel-outer-wrapper {
+    background-color: #d1b79a !important;
+    color: white !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.08);
+    border-radius: 1rem;
+    padding: 3.5rem 2rem 2.5rem 2rem; /* More top padding */
+    position: relative;
+    overflow: visible;
+}
+
+/* Bootstrap carousel overrides for position */
+#videoCarousel {
+    position: relative;
+}
+#videoCarousel .carousel-inner {
+    position: relative;
+}
+#videoCarousel .carousel-control-prev,
+#videoCarousel .carousel-control-next {
+    /* These are overridden by .carousel-btn-in-grey */
+    opacity: 0.7;
+    z-index: 2;
+}
+@media (max-width: 576px) {
+    #videoCarousel .carousel-control-prev,
+    #videoCarousel .carousel-control-next {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+#videoCarousel .carousel-control-prev.carousel-btn-in-grey,
+#videoCarousel .carousel-control-next.carousel-btn-in-grey {
+    top: 3% !important; /* Move buttons further down */
+}
+
+#videoCarousel .carousel-item {
+    margin-top: 4rem;
 }
