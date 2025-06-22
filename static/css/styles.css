@@ -116,3 +116,28 @@ footer {
 #videoCarousel .carousel-item {
     margin-top: 4rem;
 }
+
+#videoCarousel .ratio-9x16,
+#videoCarousel .ratio-16x9 {
+    width: 100%;
+    max-width: 400px; /* or 1200px for 16x9, adjust as needed */
+    margin: 0 auto;
+}
+@media (max-width: 600px) {
+    #videoCarousel .ratio-9x16,
+    #videoCarousel .ratio-16x9 {
+        max-width: 100%;
+    }
+}
+.ratio-portrait-9x16 {
+    aspect-ratio: 9 / 16;
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    margin: 0 auto;
+    display: block;
+}
+@media (max-width: 600px) {
+    .ratio-portrait-9x16 {
+        max-width: 100%;
+    }
+}

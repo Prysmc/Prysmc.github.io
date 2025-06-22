@@ -71,46 +71,7 @@
                 <div class="carousel-outer-wrapper shadow rounded p-3 mb-4 navbar-light bg-light">
                     <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">
                         <div class="carousel-inner">
-                            <!-- Slide 1: 3 Portrait Videos Side by Side -->
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-md-4 d-flex justify-content-center">
-                                        <div class="ratio ratio-9x16">
-                                            <video class="w-100 h-100" autoplay muted loop playsinline>
-                                                <source src="/static/videos/PWManager/PasswordManagerCreateUser.mp4" type="video/mp4">
-                                                Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 d-flex justify-content-center">
-                                        <div class="ratio ratio-9x16">
-                                            <video class="w-100 h-100" autoplay muted loop playsinline>
-                                                <source src="/static/videos/PWManager/AddpasswordAndEdit.mp4" type="video/mp4">
-                                                Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 d-flex justify-content-center">
-                                        <div class="ratio ratio-9x16" style="max-width: 100%; height: 750px;">
-                                            <video class="w-100 h-100" autoplay muted loop playsinline>
-                                                <source src="/static/videos/PWManager/NavigateToUrl.mp4" type="video/mp4">
-                                                Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Slide 2: Desktop Video -->
-                            <div class="carousel-item">
-                                <div class="d-flex justify-content-center">
-                                    <div class="ratio ratio-16x9" style="width: 100%; max-width: 1200px; height: 750px;">
-                                        <video class="w-100" autoplay muted loop playsinline>
-                                            <source src="/static/videos/PWManager/WebAppExample.mkv" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- Slides will be injected by JavaScript -->
                         </div>
                         <!-- Carousel Controls -->
                         <button class="carousel-control-prev carousel-btn-in-grey" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
@@ -125,7 +86,7 @@
                 </div>
                 <!-- Github link-->
                 <p class="text-muted text-center mt-3">
-                    <a href="https://github.com/Prysmc/FinanceScraper" target="_blank">Github link (request access)</a>
+                    <a href="https://github.com/Prysmc/PasswordManager" target="_blank">Github link (request access)</a>
                 </p>
             </div>
         </div>
@@ -133,6 +94,102 @@
     
     <!-- Bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    const desktopSlides = `
+        <div class="carousel-item active" id="desktop-3up">
+            <div class="row">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="ratio-portrait-9x16">
+                        <video class="w-100 h-100" autoplay muted loop playsinline>
+                            <source src="/static/videos/PWManager/PasswordManagerCreateUser.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="ratio-portrait-9x16">
+                        <video class="w-100 h-100" autoplay muted loop playsinline>
+                            <source src="/static/videos/PWManager/AddpasswordAndEdit.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="ratio-portrait-9x16">
+                        <video class="w-100 h-100" autoplay muted loop playsinline>
+                            <source src="/static/videos/PWManager/NavigateToUrl.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" id="desktop-web">
+            <div class="d-flex justify-content-center">
+                <div class="ratio ratio-16x9" style="width: 100%; max-width: 1200px;">
+                    <video class="w-100" autoplay muted loop playsinline>
+                        <source src="/static/videos/PWManager/WebAppExample.mkv" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    `;
+
+    const mobileSlides = `
+        <div class="carousel-item active" id="mobile-web">
+            <div class="d-flex justify-content-center">
+                <div class="ratio ratio-16x9">
+                    <video class="w-100" autoplay muted loop playsinline>
+                        <source src="/static/videos/PWManager/WebAppExample.mkv" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" id="mobile-portrait-1">
+            <div class="ratio ratio-9x16" style="height: 400px;">
+                <video class="w-100 h-100" autoplay muted loop playsinline>
+                    <source src="/static/videos/PWManager/PasswordManagerCreateUser.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="carousel-item" id="mobile-portrait-2">
+            <div class="ratio ratio-9x16" style="height: 400px;">
+                <video class="w-100 h-100" autoplay muted loop playsinline>
+                    <source src="/static/videos/PWManager/AddpasswordAndEdit.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="carousel-item" id="mobile-portrait-3">
+            <div class="ratio ratio-9x16" style="height: 400px;">
+                <video class="w-100 h-100" autoplay muted loop playsinline>
+                    <source src="/static/videos/PWManager/NavigateToUrl.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    `;
+
+    function setCarouselSlides() {
+        const isDesktop = window.innerWidth >= 768;
+        const carouselInner = document.querySelector('#videoCarousel .carousel-inner');
+        if (!carouselInner) return;
+
+        // Pause carousel before changing slides
+        if (window.bootstrap && window.bootstrap.Carousel) {
+            const carouselInstance = bootstrap.Carousel.getInstance(document.getElementById('videoCarousel'));
+            if (carouselInstance) carouselInstance.pause();
+        }
+
+        // Replace slides
+        carouselInner.innerHTML = isDesktop ? desktopSlides : mobileSlides;
+
+        // Re-initialize carousel to ensure correct behavior
+        if (window.bootstrap && window.bootstrap.Carousel) {
+            bootstrap.Carousel.getOrCreateInstance(document.getElementById('videoCarousel'));
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', setCarouselSlides);
+    window.addEventListener('resize', setCarouselSlides);
+    </script>
+
 </body>
 <!-- Footer -->
 <div id="footer-placeholder"></div>
