@@ -1,203 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
-    <!-- Title -->
-    <title>Password Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager // Laurence Martin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <!-- Top navbar -->
     <div id="navbar-placeholder"></div>
-    <script>
-        fetch('/templates/navBar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-                document.getElementById('main-content').style.display = 'block';
 
-                // Highlight the active page link
-                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-                navLinks.forEach(link => {
-                    if (link.getAttribute('href') === window.location.pathname) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            });
-    </script>
-
-    <!-- Main content -->
-    <div id="main-content">
+    <main id="main-content">
         <div class="container">
-            <!-- Elevated Card Container -->
-            <div class="card shadow-lg p-4">
-                <!-- Title and Description -->
-                <h2 class="text-center">Password Manager</h2>
-                <p class="text-muted text-center">
-                    Mobile and desktop apps written in Kotlin (front-end GUI) and python (database management / pc app) to allow a user to store and view passwords for websites / apps / systems.
-                    The database consists of an <a href="https://sqlite.org/" target="_blank">SQLite</a> file of which in the data is encrypted using the 
-                    <a href="https://cryptography.io/en/latest/" target="_blank">cryptography</a> library. The database can be imported and exported to JSON file of which no notable information
-                    about the user or the passwords is in plaintext form. A destop app writin in PyQt5 allows the user to view the database via JSON file.
+            <section class="aero-panel has-bolts p-4 p-md-5 mb-5">
+                <div class="panel-header">
+                    <span class="tag-label">Project // Kotlin + Python</span>
+                    <a href="https://github.com/Prysmc/PasswordManager" target="_blank" rel="noopener noreferrer" class="btn btn-aero btn-sm">GitHub</a>
+                </div>
+                <h1 class="hero-title chrome-text">Password Manager</h1>
+                <p>
+                    A secure password manager with a Kotlin mobile app and a Python desktop companion. Credentials for websites, apps
+                    and systems are stored in a locally encrypted SQLite database, and entries can launch the linked app or webpage
+                    directly. The vault can be exported to and imported from JSON with nothing sensitive left in plaintext, allowing
+                    the PyQt5 desktop app to view the same data on a PC.
                 </p>
 
-                <!-- Two Columns Below Carousel -->
-                <div class="row mt-4">
-                    <!-- Column 1 -->
+                <hr class="divider-glow">
+
+                <div class="row g-4">
                     <div class="col-md-6">
-                        <h4 class="text-center">Features</h4>
-                        <ul class="text-muted">
+                        <h2 class="section-title mono">// Features</h2>
+                        <ul class="spec-list">
                             <li>Biometric login</li>
                             <li>Multiple users per device</li>
-                            <li>Add, edit, copy and delete password information</li>
-                            <li>Information displayed: URL, username, password</li>
+                            <li>Add, edit, copy and delete credentials (URL, username, password)</li>
+                            <li>Open the linked app or webpage straight from an entry</li>
+                            <li>Encrypted JSON import / export</li>
+                            <li>Desktop viewer for the exported vault</li>
                         </ul>
                     </div>
-                    <!-- Column 2 -->
                     <div class="col-md-6">
-                        <h4 class="text-center">Technologies Used</h4>
-                        <ul class="text-muted">
-                            <li>Kotlin for app development</li>
+                        <h2 class="section-title mono">// Tech Stack</h2>
+                        <ul class="spec-list">
+                            <li>Kotlin for the mobile app</li>
                             <li>Python for database management</li>
-                            <li>Encryption / decryption for safe data storage</li>
+                            <li>SQLite database</li>
+                            <li>Python cryptography library for encryption</li>
                             <li>JSON for data transfer</li>
-                            <li>PyQT5 for destop app</li>
+                            <li>PyQt5 for the desktop app</li>
                         </ul>
                     </div>
                 </div>
-    
-                <!-- Video Carousel -->
-                <div class="carousel-outer-wrapper shadow rounded p-3 mb-4 navbar-light bg-light">
-                    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">
-                        <div class="carousel-inner">
-                            <!-- Slides will be injected by JavaScript -->
+            </section>
+
+            <h2 class="section-title mono">// Mobile Demo</h2>
+            <div class="row g-5 justify-content-center mb-5">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="device-phone">
+                        <div class="screen">
+                            <video src="/static/videos/PWManager/PasswordManagerCreateUser.mp4" autoplay muted loop playsinline preload="metadata"></video>
                         </div>
-                        <!-- Carousel Controls -->
-                        <button class="carousel-control-prev carousel-btn-in-grey" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next carousel-btn-in-grey" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
+                    <div class="device-caption"><strong>01</strong>Create User</div>
                 </div>
-                <!-- Github link-->
-                <p class="text-muted text-center mt-3">
-                    <a href="https://github.com/Prysmc/PasswordManager" target="_blank">Github link (request access)</a>
-                </p>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="device-phone">
+                        <div class="screen">
+                            <video src="/static/videos/PWManager/AddpasswordAndEdit.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+                    <div class="device-caption"><strong>02</strong>Add &amp; Edit Password</div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="device-phone">
+                        <div class="screen">
+                            <video src="/static/videos/PWManager/NavigateToUrl.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+                    <div class="device-caption"><strong>03</strong>Navigate To URL</div>
+                </div>
             </div>
+
+            <h2 class="section-title mono">// Desktop Demo</h2>
+            <div class="device-monitor">
+                <div class="screen">
+                    <video src="/static/videos/PWManager/WebAppExample.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                </div>
+                <span class="badge-label">PW-DESKTOP</span>
+                <span class="led"></span>
+            </div>
+            <div class="device-caption"><strong>04</strong>Web App Example</div>
         </div>
-    </div>
-    
-    <!-- Bootstrap js -->
+    </main>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-    const desktopSlides = `
-        <div class="carousel-item active" id="desktop-3up">
-            <div class="row">
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="ratio-portrait-9x16">
-                        <video class="w-100 h-100" autoplay muted loop playsinline>
-                            <source src="/static/videos/PWManager/PasswordManagerCreateUser.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="ratio-portrait-9x16">
-                        <video class="w-100 h-100" autoplay muted loop playsinline>
-                            <source src="/static/videos/PWManager/AddpasswordAndEdit.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center">
-                    <div class="ratio-portrait-9x16">
-                        <video class="w-100 h-100" autoplay muted loop playsinline>
-                            <source src="/static/videos/PWManager/NavigateToUrl.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item" id="desktop-web">
-            <div class="d-flex justify-content-center">
-                <div class="ratio ratio-16x9" style="width: 100%; max-width: 1200px;">
-                    <video class="w-100" autoplay muted loop playsinline>
-                        <source src="/static/videos/PWManager/WebAppExample.mkv" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-    `;
-
-    const mobileSlides = `
-        <div class="carousel-item active" id="mobile-web">
-            <div class="d-flex justify-content-center">
-                <div class="ratio ratio-16x9">
-                    <video class="w-100" autoplay muted loop playsinline>
-                        <source src="/static/videos/PWManager/WebAppExample.mkv" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item" id="mobile-portrait-1">
-            <div class="ratio ratio-9x16" style="height: 400px;">
-                <video class="w-100 h-100" autoplay muted loop playsinline>
-                    <source src="/static/videos/PWManager/PasswordManagerCreateUser.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <div class="carousel-item" id="mobile-portrait-2">
-            <div class="ratio ratio-9x16" style="height: 400px;">
-                <video class="w-100 h-100" autoplay muted loop playsinline>
-                    <source src="/static/videos/PWManager/AddpasswordAndEdit.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <div class="carousel-item" id="mobile-portrait-3">
-            <div class="ratio ratio-9x16" style="height: 400px;">
-                <video class="w-100 h-100" autoplay muted loop playsinline>
-                    <source src="/static/videos/PWManager/NavigateToUrl.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    `;
-
-    function setCarouselSlides() {
-        const isDesktop = window.innerWidth >= 768;
-        const carouselInner = document.querySelector('#videoCarousel .carousel-inner');
-        if (!carouselInner) return;
-
-        // Pause carousel before changing slides
-        if (window.bootstrap && window.bootstrap.Carousel) {
-            const carouselInstance = bootstrap.Carousel.getInstance(document.getElementById('videoCarousel'));
-            if (carouselInstance) carouselInstance.pause();
-        }
-
-        // Replace slides
-        carouselInner.innerHTML = isDesktop ? desktopSlides : mobileSlides;
-
-        // Re-initialize carousel to ensure correct behavior
-        if (window.bootstrap && window.bootstrap.Carousel) {
-            bootstrap.Carousel.getOrCreateInstance(document.getElementById('videoCarousel'));
-        }
-    }
-
-    window.addEventListener('DOMContentLoaded', setCarouselSlides);
-    window.addEventListener('resize', setCarouselSlides);
-    </script>
-
+    <script src="/static/js/site.js"></script>
 </body>
-<!-- Footer -->
-<div id="footer-placeholder"></div>
-<script>
-    fetch('/templates/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-</script>
 </html>

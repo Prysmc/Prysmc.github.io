@@ -1,61 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
-    <!-- Title -->
-    <title>Home</title>
-    <link rel="stylesheet" href="static/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home // Laurence Martin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <!-- Top navbar -->
     <div id="navbar-placeholder"></div>
-    <script>
-        fetch('/templates/navBar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-                document.getElementById('main-content').style.display = 'block';
 
-                // Highlight the active page link
-                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-                navLinks.forEach(link => {
-                    if (link.getAttribute('href') === window.location.pathname) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            });
-    </script>
-
-    <!-- Main content -->
-    <div id="main-content">
+    <main id="main-content">
         <div class="container">
-            <h1 class="text-center mt-0">Welcome To The Online Showcase </h1>
-            <p class="text-muted text-center">
-                My name is Laurence Martin and I work as a Test Automation Engineer in the UK in the Maritime Engineering sector. I primarily work
-                with python in my current role however I have also created a Django server for other application testing, 
-                hence an interest with setting up a Github pages website, albeit just static pages for now. So this is still very much work in progress!
-            </p>
-            <p class="text-muted text-center">
-                This website will detail various personal projects I am working on along with my CV. In my spare time I am currently focused on Kotlin
-                projects, utilising it for Android development both front end and back end.
-            </p>
-            <p class="text-muted text-center">Use the navigation bar at the top to see my CV and demos and use the bottom footer for contact information and to listen to some of my music!</p>
+            <section class="aero-panel has-bolts p-4 p-md-5 mb-5">
+                <p class="hero-sub mb-0">Test Automation Engineer // UK</p>
+                <h1 class="hero-title chrome-text">Laurence Martin</h1>
+                <div class="row g-4 mt-1">
+                    <div class="col-lg-8">
+                        <p>
+                            I work as a Test Automation Engineer in the UK Maritime Engineering sector. Day to day I primarily work
+                            with Python, and I have also built a Django server for application testing &mdash; which sparked the interest
+                            in setting up this GitHub Pages site.
+                        </p>
+                        <p class="mb-0">
+                            In my spare time I focus on Kotlin, using it for Android development across both the front end and back end.
+                            This site showcases those personal projects along with my CV. Use the player at the top to
+                            listen to some of my music &mdash; it keeps playing as you browse.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column gap-2 justify-content-center">
+                        <a href="/cv/" class="btn btn-aero btn-neon">View CV</a>
+                        <a href="https://github.com/Prysmc" target="_blank" rel="noopener noreferrer" class="btn btn-aero">GitHub</a>
+                        <a href="https://www.linkedin.com/in/laurence-martin-265785171/" target="_blank" rel="noopener noreferrer" class="btn btn-aero">LinkedIn</a>
+                        <a href="mailto:Laurence.martin8888@gmail.com" class="btn btn-aero">Email</a>
+                    </div>
+                </div>
+            </section>
+
+            <h2 class="section-title mono">// Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <a href="/momexDemo/" class="aero-panel project-card">
+                        <span class="tag-label align-self-start">Kotlin</span>
+                        <h3 class="neon-text">Momex</h3>
+                        <p>Personal finance hub that collates bank and investment data into one place, with AI-generated reports powered by Gemini.</p>
+                        <span class="go">View project &rarr;</span>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="/passwordManagerDemo/" class="aero-panel project-card">
+                        <span class="tag-label align-self-start">Kotlin // Python</span>
+                        <h3 class="neon-text">Password Manager</h3>
+                        <p>Mobile and desktop apps for storing credentials in an encrypted SQLite database, with biometric login and JSON import/export.</p>
+                        <span class="go">View project &rarr;</span>
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Bootstrap js -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/site.js"></script>
 </body>
-
-<!-- Footer -->
-<div id="footer-placeholder"></div>
-<script>
-    fetch('/templates/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-</script>
 </html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momex // Laurence Martin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main id="main-content">
+        <div class="container">
+            <section class="aero-panel has-bolts p-4 p-md-5 mb-5">
+                <div class="panel-header">
+                    <span class="tag-label">Project // Kotlin</span>
+                    <a href="https://github.com/Prysmc/Momex" target="_blank" rel="noopener noreferrer" class="btn btn-aero btn-sm">GitHub</a>
+                </div>
+                <h1 class="hero-title chrome-text">Momex</h1>
+                <p>
+                    A personal finance app that collates data from multiple banks and investment platforms into one place.
+                    Bank and investment connections are pulled in through the Endute API alongside the Trading212 API, stored locally
+                    in an encrypted database, and visualised as balance and spending trends. Google Gemini generates AI reports on the
+                    database so you can ask questions about your finances in plain English.
+                </p>
+
+                <hr class="divider-glow">
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h2 class="section-title mono">// Features</h2>
+                        <ul class="spec-list">
+                            <li>Banks and investments combined in one overview</li>
+                            <li>Transaction filtering and balance / spending trend charts</li>
+                            <li>AI-powered database reports and search via Gemini</li>
+                            <li>Biometric login</li>
+                            <li>Encrypted local storage and encrypted backups</li>
+                            <li>Weekly spending review reminders</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="section-title mono">// Tech Stack</h2>
+                        <ul class="spec-list">
+                            <li>Kotlin, Jetpack Compose &amp; Material 3</li>
+                            <li>MVVM + Repository architecture</li>
+                            <li>Endute &amp; Trading212 APIs via OkHttp</li>
+                            <li>Google Gemini REST API</li>
+                            <li>Room + SQLCipher (AES-256)</li>
+                            <li>Vico charts &amp; WorkManager</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <h2 class="section-title mono">// Mobile Demo</h2>
+            <div class="row g-5 justify-content-center phones-cropped">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="device-phone">
+                        <div class="screen">
+                            <video src="/static/videos/Momex/LoginAndOverview.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+                    <div class="device-caption"><strong>01</strong>Login &amp; Overview</div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="device-phone">
+                        <div class="screen">
+                            <video src="/static/videos/Momex/ApiConnections.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+                    <div class="device-caption"><strong>02</strong>API Connections</div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="device-phone">
+                        <div class="screen">
+                            <video src="/static/videos/Momex/FilterAndTrends.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+                    <div class="device-caption"><strong>03</strong>Filter &amp; Trends</div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="device-phone">
+                        <div class="screen">
+                            <video src="/static/videos/Momex/Database.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+                    <div class="device-caption"><strong>04</strong>Database &amp; AI Reports</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/site.js"></script>
+</body>
+</html>

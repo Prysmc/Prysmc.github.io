@@ -1,39 +1,46 @@
-<!-- Bootstrap CSS -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/sandstone/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/styles.css">
-</head>
+<!-- Icons are injected by site.js: inline SVG here breaks Live Server's script injection -->
+<header class="aero-header sticky-top">
+    <nav class="navbar navbar-expand-xl navbar-dark aero-nav">
+        <div class="container-fluid px-3 px-xl-4">
+            <a class="navbar-brand" href="/">
+                <span class="brand-orb" aria-hidden="true"></span>
+                <span>LAURENCE MARTIN<span class="d-none d-xxl-inline"> <span class="slash">//</span> PORTFOLIO</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex flex-column flex-xl-row align-items-xl-center gap-3 ms-xl-auto">
+                    <div class="music-player" id="music-player">
+                        <button type="button" class="mp-btn" id="mp-prev" aria-label="Previous track"></button>
+                        <button type="button" class="mp-btn mp-play" id="mp-play" aria-label="Play"></button>
+                        <button type="button" class="mp-btn" id="mp-next" aria-label="Next track"></button>
+                        <div class="mp-lcd">
+                            <div class="mp-lcd-row">
+                                <span id="mp-track"></span>
+                                <span id="mp-time">0:00 / 0:00</span>
+                            </div>
+                            <div class="mp-progress" id="mp-progress" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+                                <div class="mp-progress-fill" id="mp-progress-fill"></div>
+                            </div>
+                        </div>
+                        <audio id="audio-player" preload="metadata"></audio>
+                    </div>
 
-<!-- Static Top Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">Laurence Martin - Portfolio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/cv/">CV</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/financeScraperDemo/">Demo - Finance Scraper</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/passwordManagerDemo/">Demo - Password Manager</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/oldProjects/">Old Projects</a>
-                </li>
-            </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/cv/">CV</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/momexDemo/">Momex</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/passwordManagerDemo/">Password Manager</a></li>
+                    </ul>
+
+                    <div class="contact-icons d-flex gap-2">
+                        <a href="mailto:Laurence.martin8888@gmail.com" class="icon-link-aero" data-icon="email" aria-label="Email" title="Email"></a>
+                        <a href="https://www.linkedin.com/in/laurence-martin-265785171/" target="_blank" rel="noopener noreferrer" class="icon-link-aero" data-icon="linkedin" aria-label="LinkedIn" title="LinkedIn"></a>
+                        <a href="https://github.com/Prysmc" target="_blank" rel="noopener noreferrer" class="icon-link-aero" data-icon="github" aria-label="GitHub" title="GitHub"></a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</nav>
-
-<!-- Add some margin to avoid content being hidden under the navbar -->
-<div class="mt-5 pt-5"></div>
+    </nav>
+</header>
