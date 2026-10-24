@@ -22,10 +22,12 @@
                 </div>
                 <h1 class="hero-title chrome-text">Password Manager</h1>
                 <p>
-                    A secure password manager with a Kotlin mobile app and a Python desktop companion. Credentials for websites, apps
-                    and systems are stored in a locally encrypted SQLite database, and entries can launch the linked app or webpage
-                    directly. The vault can be exported to and imported from JSON with nothing sensitive left in plaintext, allowing
-                    the PyQt5 desktop app to view the same data on a PC.
+                    A secure, offline password manager with an Android app built in Kotlin and Jetpack Compose, and a Python desktop
+                    companion. Every field in the vault is encrypted with AES-GCM using a key derived from the master password, and
+                    stored in a local SQLite database. Entries are organised into folders, can launch the linked app or website and
+                    hand the login over through Android's Autofill service, and the session signs out the moment the app is minimised.
+                    The vault can be exported to JSON with nothing sensitive left in plaintext, so the PyQt5 desktop app can open the
+                    same data on a PC.
                 </p>
 
                 <hr class="divider-glow">
@@ -34,23 +36,28 @@
                     <div class="col-md-6">
                         <h2 class="section-title mono">// Features</h2>
                         <ul class="spec-list">
-                            <li>Biometric login</li>
-                            <li>Multiple users per device</li>
-                            <li>Add, edit, copy and delete credentials (URL, username, password)</li>
-                            <li>Open the linked app or webpage straight from an entry</li>
+                            <li>Master password and biometric login, multiple users per device</li>
+                            <li>Auto sign out when minimised or after 5 minutes idle</li>
+                            <li>Folders, fuzzy search and collapsible password cards</li>
+                            <li>Strong password generator</li>
+                            <li>Open the linked app or website, with autofill of the login</li>
+                            <li>Clipboard cleared 30 seconds after copying</li>
+                            <li>Screenshots blocked and failed logins rate-limited</li>
                             <li>Encrypted JSON import / export</li>
-                            <li>Desktop viewer for the exported vault</li>
+                            <li>Desktop viewer with folders, search and copy</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <h2 class="section-title mono">// Tech Stack</h2>
                         <ul class="spec-list">
-                            <li>Kotlin for the mobile app</li>
-                            <li>Python for database management</li>
+                            <li>Kotlin + Jetpack Compose (Material 3) for the mobile app</li>
+                            <li>Python embedded via Chaquopy for database and crypto logic</li>
                             <li>SQLite database</li>
-                            <li>Python cryptography library for encryption</li>
+                            <li>AES-GCM encryption with PBKDF2-HMAC-SHA256 key derivation</li>
+                            <li>Android Keystore + BiometricPrompt for biometric unlock</li>
+                            <li>Android Autofill service</li>
                             <li>JSON for data transfer</li>
-                            <li>PyQt5 for the desktop app</li>
+                            <li>PyQt5 + PyInstaller for the desktop app</li>
                         </ul>
                     </div>
                 </div>
@@ -58,29 +65,37 @@
 
             <h2 class="section-title mono">// Mobile Demo</h2>
             <div class="row g-4 g-sm-5 justify-content-center mb-5">
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-sm-6 col-xl-3">
                     <div class="device-phone">
                         <div class="screen">
-                            <video src="/static/videos/PWManager/PasswordManagerCreateUser.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                            <video src="/static/videos/PWManager/CreateUser.mp4" autoplay muted loop playsinline preload="metadata"></video>
                         </div>
                     </div>
-                    <div class="device-caption"><strong>01</strong>Create User</div>
+                    <div class="device-caption"><strong>01</strong>Create New User</div>
                 </div>
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-sm-6 col-xl-3">
                     <div class="device-phone">
                         <div class="screen">
-                            <video src="/static/videos/PWManager/AddpasswordAndEdit.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                            <video src="/static/videos/PWManager/AddPassword.mp4" autoplay muted loop playsinline preload="metadata"></video>
                         </div>
                     </div>
-                    <div class="device-caption"><strong>02</strong>Add &amp; Edit Password</div>
+                    <div class="device-caption"><strong>02</strong>Add Password</div>
                 </div>
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-sm-6 col-xl-3">
                     <div class="device-phone">
                         <div class="screen">
-                            <video src="/static/videos/PWManager/NavigateToUrl.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                            <video src="/static/videos/PWManager/LinkToApp.mp4" autoplay muted loop playsinline preload="metadata"></video>
                         </div>
                     </div>
-                    <div class="device-caption"><strong>03</strong>Navigate To URL</div>
+                    <div class="device-caption"><strong>03</strong>Link To App</div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="device-phone">
+                        <div class="screen">
+                            <video src="/static/videos/PWManager/AutoSignOut.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                        </div>
+                    </div>
+                    <div class="device-caption"><strong>04</strong>Auto Sign Out When Minimised</div>
                 </div>
             </div>
 
@@ -92,7 +107,7 @@
                 <span class="badge-label">PW-DESKTOP</span>
                 <span class="led"></span>
             </div>
-            <div class="device-caption"><strong>04</strong>Web App Example</div>
+            <div class="device-caption"><strong>05</strong>Desktop App Example</div>
         </div>
     </main>
 
